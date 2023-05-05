@@ -43,19 +43,31 @@ form.addEventListener('submit', onsubmit)
 function onsubmit(e){
     e.preventDefault();
 
-    console.log(name.value)
-    console.log(email.value)
-    console.log(phone.value)
-    console.log(date.value)
-    console.log(time.value)
+    // console.log(name.value)
+    // console.log(email.value)
+    // console.log(phone.value)
+    // console.log(date.value)
+    // console.log(time.value)
 
     const li = document.createElement('li')
     li.appendChild(document.createTextNode(`${name.value} : ${email.value}`))
-    localStorage.setItem('Name', name.value)
-    localStorage.setItem('Email', email.value)
-    localStorage.setItem('Phone', phone.value)
-    localStorage.setItem('Date', date.value)
-    localStorage.setItem('Time', time.value)
+    // localStorage.setItem('Name', name.value)
+    // localStorage.setItem('Email', email.value)
+    // localStorage.setItem('Phone', phone.value)
+    // localStorage.setItem('Date', date.value)
+    // localStorage.setItem('Time', time.value)
+
+    let obj1 = {
+        name : name.value,
+        email : email.value,
+        phone : phone.value,
+        date : date.value,
+        time : time.value
+    } 
+
+    let serialized = JSON.stringify(obj1)
+
+    localStorage.setItem('Myobj', serialized)
 
     userlist.append(li);
 
