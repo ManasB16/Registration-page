@@ -50,7 +50,7 @@ function onsubmit(e){
     // console.log(time.value)
 
     const li = document.createElement('li')
-    li.appendChild(document.createTextNode(`${name.value} : ${email.value}`))
+    li.appendChild(document.createTextNode(`${name.value} : ${email.value} - ${phone.value} `))
     // localStorage.setItem('Name', name.value)
     // localStorage.setItem('Email', email.value)
     // localStorage.setItem('Phone', phone.value)
@@ -67,12 +67,15 @@ function onsubmit(e){
 
     let serialized = JSON.stringify(obj1)
 
-    localStorage.setItem('Myobj', serialized)
+    localStorage.setItem(name.value, serialized)
 
     userlist.append(li);
 
     name.value = ''
     email.value = ''
+    phone.value = ''
+    date.value = ''
+    time.value = ''
 
 }
 
